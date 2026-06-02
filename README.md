@@ -42,21 +42,36 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 */
 
 module jk(j, k, clk, rst, q);
+
   input j, k, clk, rst;
+  
   output reg q;
+  
 
   always @(posedge clk or posedge rst) begin
+  
     if (rst)
+    
       q <= 0;
+      
     else if (j == 0 && k == 0)
+    
       q <= q;
+      
     else if (j == 0 && k == 1)
+    
       q <= 0;
+      
     else if (j == 1 && k == 0)
+    
       q <= 1;
+      
     else if (j == 1 && k == 1)
+    
       q <= ~q;
+      
   end
+  
 endmodule
 
 
@@ -67,7 +82,7 @@ endmodule
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
-<img width="1884" height="922" alt="{4A486F4C-C2BB-44E1-9A27-B9BBB2410238}" src="https://github.com/user-attachments/assets/b30f3a41-b149-4adc-8f96-0ab705ab057c" />
+<img width="1800" height="962" alt="{6EC38823-6F8C-4888-ACD9-8425220AED8C}" src="https://github.com/user-attachments/assets/d55f5420-6433-4672-af1c-4dadb228b94f" />
 
 
 **RESULTS**
